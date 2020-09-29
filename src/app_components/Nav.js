@@ -1,17 +1,17 @@
 import React, { Component } from "react"
-
+import {withRouter,NavLink} from "react-router-dom";
 class Nav extends Component {
     render(){
         return(
-            <nav class="main-nav">
+            <nav className="main-nav">
                 <ul>
-                    <li><a href='#'>Cats</a></li>
-                    <li><a href='#'>Dogs</a></li>
-                    <li><a href='#'>Computers</a></li>
+                    <li><NavLink to="/buttonSearch/cats">Cats</NavLink></li>
+                    <li><NavLink to="/buttonSearch/dogs">Dogs</NavLink></li>
+                    <li><NavLink to="/buttonSearch/computers">Computers</NavLink></li>
                 </ul>
             </nav>
         )
     }
 }
 
-export default Nav
+export default withRouter(Nav)
