@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PhotowrapList from "../app_components/PhotowrapList";
 import {withRouter} from "react-router-dom";
-import PhotowrapNotFount from "../app_components/PhotowrapNotFount"
+import PhotowrapNotFount from "../app_components/PhotowrapNotFount";
+import {Consumer} from "../context";
 
 class FormSearch extends Component{
 
@@ -40,8 +41,19 @@ class FormSearch extends Component{
 
         return(
             <div className="photo-container">
-                {/* hide the search component title if it's no result found */}
-                {showTitle ? <h2>{this.tag}</h2> : null }
+                <Consumer>
+                    {   //consumer to display the loading message when the data is fetching
+                        context =>{
+                            return(
+                                <React.Fragment>
+                                    {context.loading ? showTitle ? <h2>{this.tag}</h2> : null : <h2>Loading...</h2>}
+                                    {/* hide the search component title if it's no result found */}
+                                    {/* {showTitle ? <h2>{this.tag}</h2> : null } */}
+                                </React.Fragment>
+                            )
+                        }
+                    }
+                </Consumer>
                 
                 <ul>
                     {/* display the photo results */}

@@ -1,3 +1,16 @@
+## To Run this App 
+    First: Download this file from Github
+    Second: runs the "npm install" to download the the dependencies on terminal
+    Third: Go Flickr API apply for a Flickr API key
+    Fourth: under src folder create a file called config.js and place you key in following format:
+        ```
+        const key = "you key" ;
+
+        export default key;
+        ```
+    Five: run npm start in terminal
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

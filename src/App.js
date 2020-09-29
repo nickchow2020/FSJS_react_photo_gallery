@@ -7,6 +7,7 @@ import ButtonSearch from "./routes_components/ButtonSearch";
 import FormSearch from "./routes_components/FormSearch";
 import config from "./config";
 import PageNotFount from './routes_components/PageNotFound';
+import {Provider} from "./context";
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
   state = {
     theID : null, // initial the match params id value to null
     theURL : [], // initial the fetching date from flickr to actual URL an empty array
+    isLoading : false // initial the loading state to false
   }
 
   
@@ -32,7 +34,8 @@ class App extends Component {
           const theURL = responseData.map(data => `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}.jpg`)
                       // use map the map through each data array from flickr and convert it's data to actual URL format
           this.setState({
-            theURL  //Update component state theURL each time the theURL is return an array value
+            theURL,  //Update component state theURL each time the theURL is return an array value
+            isLoading : true
           })
         })
       },500) // set Interval to every half second
@@ -62,14 +65,16 @@ class App extends Component {
           <BrowserRouter>
             <Form />
             <Nav />
-            <Switch>
-              <Route path="/buttonSearch/:id" render={()=> <ButtonSearch updateStateId={this.updateTheID} photoURL={this.state.theURL} />} />
-                {/* set up the buttonSerach Route that render it component each time when the button is click ,pass updateTheID method to buttonSerach component to retrieve the back to App component,and pass the photoURL to it. */}
-              <Route path="/search/:id" render={()=> <FormSearch updateStateId={this.updateTheID} photoURL={this.state.theURL} />} />
-              {/* set up the search Route and do that same thing as the buttonSearch route */}
-              <Route path="/:id" component={PageNotFount} />
-              {/* set up the page not found Route,it display each time when user navigated to an un-existing Route */}
-            </Switch>
+            <Provider value={{loading : this.state.isLoading}}>
+              <Switch>
+                <Route path="/buttonSearch/:id" render={()=> <ButtonSearch updateStateId={this.updateTheID} photoURL={this.state.theURL} />} />
+                  {/* set up the buttonSerach Route that render it component each time when the button is click ,pass updateTheID method to buttonSerach component to retrieve the back to App component,and pass the photoURL to it. */}
+                <Route path="/search/:id" render={()=> <FormSearch updateStateId={this.updateTheID} photoURL={this.state.theURL} />} />
+                {/* set up the search Route and do that same thing as the buttonSearch route */}
+                <Route path="/:id" component={PageNotFount} />
+                {/* set up the page not found Route,it display each time when user navigated to an un-existing Route */}
+              </Switch>
+            </Provider>
         </BrowserRouter>
       </div>
     )

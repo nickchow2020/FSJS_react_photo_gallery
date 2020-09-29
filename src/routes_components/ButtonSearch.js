@@ -1,6 +1,7 @@
 import React, { Component } from "react" ;
 import {withRouter} from "react-router-dom";
 import PhotowrapList from "../app_components/PhotowrapList";
+import {Consumer} from "../context";
 class ButtonSearch extends Component{
 
     componentDidMount = ()=>{
@@ -19,8 +20,19 @@ class ButtonSearch extends Component{
     render(){
         return(
             <div className="photo-container">
-                {/* display the current match.params.id value */}
-                <h2>{this.id}</h2> 
+                <Consumer>
+                    { // Consumer use to display the loading message when the data is fetching
+                        context =>{
+                            return(
+                                <React.Fragment>
+                                    {/* display the current match.params.id value */}
+                                    {context.loading ? <h2>{this.id}</h2> : <h2>Loading.....</h2> }
+                                </React.Fragment>
+                            )
+                        }
+                    }
+                </Consumer>
+
                 <ul>
                     {
                         // map through the photoURLs from the parent component and display each image by PhotoWrapList component
