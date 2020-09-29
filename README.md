@@ -1,6 +1,6 @@
 ## To Run this App 
     First: Download this file from Github
-    Second: runs the "npm install" to download the the dependencies on terminal
+    Second: runs the "npm install" to download all the dependencies on terminal
     Third: Go Flickr API apply for a Flickr API key
     Fourth: under src folder create a file called config.js and place you key in following format:
         ```
