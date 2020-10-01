@@ -5,9 +5,9 @@ class Nav extends Component {
         return(
             <nav className="main-nav">
                 <ul>
-                    <li><NavLink to="/buttonSearch/cats">Cats</NavLink></li>
-                    <li><NavLink to="/buttonSearch/dogs">Dogs</NavLink></li>
-                    <li><NavLink to="/buttonSearch/computers">Computers</NavLink></li>
+                    <li><NavLink to="/defcat/cat">Cats</NavLink></li>
+                    <li><NavLink to="/defdog/dog">Dogs</NavLink></li>
+                    <li><NavLink to="/deflion/lion">Lion</NavLink></li>
                 </ul>
             </nav>
         )
