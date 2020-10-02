@@ -8,6 +8,7 @@ class Nav extends Component {
                     <li><NavLink to="/defcat/cat">Cats</NavLink></li>
                     <li><NavLink to="/defdog/dog">Dogs</NavLink></li>
                     <li><NavLink to="/deflion/lion">Lion</NavLink></li>
+                    <li><NavLink exact to="/">Home</NavLink></li>
                 </ul>
             </nav>
         )

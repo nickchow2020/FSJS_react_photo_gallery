@@ -5,13 +5,6 @@ import PhotowrapNotFount from "../app_components/PhotowrapNotFount";
 
 class FormSearch extends Component{
 
-
-    // when page refresh, call fetchDataFromFlickr function
-    componentDidMount = () =>{
-        const currentSearchKey = this.props.match.params.id;
-        this.props.fetchSearch(currentSearchKey);
-    }
-
     render(){
         return(
             <div className="photo-container">

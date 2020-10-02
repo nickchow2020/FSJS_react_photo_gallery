@@ -3,11 +3,13 @@ import {withRouter} from "react-router-dom"
 
 class Form extends Component{
 
+    //add event handler on Search Input to called the fetchingDataFromFlickr method
+
     handleSubmit = (e)=>{
         e.preventDefault();
         const inputV = this.inputV.value;
         this.props.history.push(`/search/${inputV}`);
-        this.props.fetchSearch(this.state);
+        this.props.fetchSearch(inputV);
         e.currentTarget.reset();
     }
 

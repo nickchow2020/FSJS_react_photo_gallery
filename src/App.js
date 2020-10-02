@@ -9,6 +9,7 @@ import Lion from "./routes_components/Lion"; // Import Lion Component
 import FormSearch from "./routes_components/FormSearch"; // import FormSearch Component 
 import config from "./config"; // import flickr API key
 import PageNotFount from './routes_components/PageNotFound'; // Import PageNotFound Component
+import Home from "./routes_components/Home" // Import Home component
 
 
 class App extends Component {
@@ -82,6 +83,7 @@ class App extends Component {
               <Nav />
               <Switch>
                     {/* pass url and fetchingDataFromFlickr method to it's responsive component and Route*/}
+                    <Route exact path="/" component={Home}/>
                     <Route path="/defcat/:id" render={()=> <Cat catURL={this.state.cat} fetchCat={this.fetchingDataFromFlickr} />} />
                     <Route path="/defdog/:id" render={()=> <Dog dogURL={this.state.dog} fetchDog={this.fetchingDataFromFlickr} />} />
                     <Route path="/deflion/:id" render={()=> <Lion lionURL={this.state.lion} fetchLion={this.fetchingDataFromFlickr} />} />
