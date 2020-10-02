@@ -4,11 +4,13 @@ import PhotowrapList from "../app_components/PhotowrapList";
 
 class Cat extends Component{
 
+    //initial it's default search key to empty string
+
     state = { 
-        defKey : "",
-        url : []
+        defKey : ""
     }
     
+    // update initial searchKey value and call the FetchingDataFromFlickr method.
     componentDidMount = ()=>{
         const defKey = this.props.match.params.id;
         this.props.fetchCat(defKey)
@@ -16,16 +18,21 @@ class Cat extends Component{
             defKey,
         })
     }
-    
 
+    // structure the photo urls
+
+    theResultList = this.props.catURL.map((url,index) => { return <PhotowrapList urlV={url} key={index} />} )
+    
     render(){
         
         return(
             <div className="photo-container">
+                {/* display it's search key */}
                 <h2>{this.state.defKey}</h2>
                 <ul>
                     {
-                        this.props.catURL.map((url,index) => { return <PhotowrapList urlV={url} key={index} />} )
+                        // display the photo urls
+                        this.theResultList
                     }
                 </ul>
             </div>
