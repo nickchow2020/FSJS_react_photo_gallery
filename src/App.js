@@ -21,7 +21,7 @@ class App extends Component {
       cat: [], // store cat url
       dog: [], // store dog url
       lion: [], // store lion url
-      searchURL : [], // store search url
+      searchURL : [undefined], // store search url initial it to undefine 
       searchKey : "", // store search key
       loading: false // initial loading to false
     }
