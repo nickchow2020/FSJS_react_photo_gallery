@@ -6,6 +6,12 @@ import Loading from "../app_components/Loading";
 
 class FormSearch extends Component{
 
+    //Reloading the fetchSearch method
+    componentDidMount = ()=> {
+        const currentSearchKey = this.props.match.params.id;
+        this.props.fetchSearch(currentSearchKey);
+    }
+
     render(){
         return(
             <div className="photo-container">
