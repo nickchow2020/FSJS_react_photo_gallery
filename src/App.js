@@ -1,5 +1,5 @@
 import React, { Component } from 'react';  // import React and Component
-import {BrowserRouter,Route,Switch,withRouter} from "react-router-dom"; // import BrowserRounter,Router,Switch,and WithoutRouter from react-router-dom
+import {BrowserRouter,Route,Switch,withRouter,HashRouter} from "react-router-dom"; // import BrowserRounter,Router,Switch,and WithoutRouter from react-router-dom
 import axios from "axios"; // import axios
 import Form from "./app_components/Form"; // import Form component
 import Nav from "./app_components/Nav"; // import Nav Component 
@@ -76,7 +76,7 @@ class App extends Component {
 
   render(){
     return(
-      <BrowserRouter>
+      <HashRouter>
         <div className="container">
               {/* Passing FetchingDataFromFlickr method to Form Component */}
               <Form fetchSearch={this.fetchingDataFromFlickr} />
@@ -96,7 +96,7 @@ class App extends Component {
                     <Route path="/:id" component={PageNotFount} />
               </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
