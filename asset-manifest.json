@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/FSJS_react_photo_gallery/static/css/main.d5629116.chunk.css",
+    "main.js": "/FSJS_react_photo_gallery/static/js/main.216b054e.chunk.js",
+    "main.js.map": "/FSJS_react_photo_gallery/static/js/main.216b054e.chunk.js.map",
+    "runtime-main.js": "/FSJS_react_photo_gallery/static/js/runtime-main.de9d27e7.js",
+    "runtime-main.js.map": "/FSJS_react_photo_gallery/static/js/runtime-main.de9d27e7.js.map",
+    "static/js/2.207adfca.chunk.js": "/FSJS_react_photo_gallery/static/js/2.207adfca.chunk.js",
+    "static/js/2.207adfca.chunk.js.map": "/FSJS_react_photo_gallery/static/js/2.207adfca.chunk.js.map",
+    "index.html": "/FSJS_react_photo_gallery/index.html",
+    "precache-manifest.84028497a55765c652a8055203558c83.js": "/FSJS_react_photo_gallery/precache-manifest.84028497a55765c652a8055203558c83.js",
+    "service-worker.js": "/FSJS_react_photo_gallery/service-worker.js",
+    "static/css/main.d5629116.chunk.css.map": "/FSJS_react_photo_gallery/static/css/main.d5629116.chunk.css.map",
+    "static/js/2.207adfca.chunk.js.LICENSE.txt": "/FSJS_react_photo_gallery/static/js/2.207adfca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de9d27e7.js",
+    "static/js/2.207adfca.chunk.js",
+    "static/css/main.d5629116.chunk.css",
+    "static/js/main.216b054e.chunk.js"
+  ]
+}
